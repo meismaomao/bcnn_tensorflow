@@ -11,10 +11,7 @@ class BcnnModel(object):
     def _build_model(self):
         self.X = tf.placeholder(tf.uint8, [None, 28, 28, 3])
         self.y = tf.placeholder(tf.float32, [None, 10])
-        self.domain = tf.placeholder(tf.float32, [None, 2])
-        self.l = tf.placeholder(tf.float32, [])
-        self.train = tf.placeholder(tf.bool, [])
-        self.disc = tf.placeholder(tf.float32, [None, 2])
+       
 
         X_input = (tf.cast(self.X, tf.float32) - self.pixel_mean) / 255.
 
